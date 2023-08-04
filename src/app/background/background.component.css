@@ -2,6 +2,7 @@ div{
     display: flex;
     flex-direction: column;
     width: 100%;
+    
     height: 500px;
     background: var(--unnamed-color-676d72) 0% 0% no-repeat padding-box;
     background: #676D72 0% 0% no-repeat padding-box;

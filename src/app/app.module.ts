@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FooderComponent } from './fooder/fooder.component';
 import { BackgroundComponent } from './background/background.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     FooderComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
