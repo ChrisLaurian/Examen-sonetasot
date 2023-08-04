@@ -1,0 +1,41 @@
+nav {
+    display: flex;
+    justify-content: space-around; /* Centra horizontalmente los elementos */
+    align-items: center;
+    padding: 10px 0; /* Ajusta el espacio alrededor del menú */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 21px #00000010;
+    opacity: 1;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos en el contenedor flex */
+    
+  }
+  
+  nav li {
+    margin: 0;
+    padding: 0;
+    margin-left: 30px;
+    opacity: 1;
+
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #37AEFD;
+    margin: 0 10px;
+    text-align: left;
+    font: normal normal bold 16px/26px Nutmeg;
+    letter-spacing: 0px;
+    
+  }
+
+  #Ico-AvPr{
+    
+  }
+  
