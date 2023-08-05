@@ -1,7 +1,7 @@
 .container{
     display: flex;
     max-width: 100%;
-    width: 100%;
+    width: 90%;
     justify-content: center;
     padding: 2em;
     flex-direction: column;
@@ -20,18 +20,35 @@
 
 .title-check{
     display: flex;
+    width: 100%;
     color: #00326C;
     align-items: center;
+    justify-content: space-between;
     
+    
+    
+}
+.check-container{
+    display: flex;
+    align-items: center;
+   
 }
 
 .check{
+    display: flex;
     width: 2em;
     height: 2em;
     background-color: #00cc00;
     border-radius: 100%;
     margin-right: .5em;
+    justify-content: center;
+    align-items: center;
     
+}
+
+.check img{
+    width: 80%;
+    height: 80%;
 }
 
 .box1{
