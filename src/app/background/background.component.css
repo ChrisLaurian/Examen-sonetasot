@@ -1,8 +1,8 @@
-div{
+.container{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    
+    position: relative;
+    overflow: hidden;
     height: 500px;
     background: var(--unnamed-color-676d72) 0% 0% no-repeat padding-box;
     background: #676D72 0% 0% no-repeat padding-box;
@@ -42,4 +42,34 @@ div{
     height: 200px;
     margin-left: 93%;
     margin-top: 18%;
+    
+}
+
+.whatsapp{
+    width: 9em;
+    height: 2em;
+    background-color: #57BBFF;
+    border-radius: 15px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: baseline;
+    color: aliceblue;
+    top: 20px;
+    right:  11em;
+}
+
+.whatsapp:hover{
+    transition: 1s;
+    background-color: #00326C;
+}
+
+.whatsapp img{
+    width: 1.2em;
+    align-self: center;
+}
+
+.whatsapp p{
+    align-self: center;
+    margin-left: .2em;
 }
