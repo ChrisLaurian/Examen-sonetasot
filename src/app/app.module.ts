@@ -7,6 +7,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FooderComponent } from './fooder/fooder.component';
 import { BackgroundComponent } from './background/background.component';
 import { PanelComponent } from './panel/panel.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PanelComponent } from './panel/panel.component';
     NavMenuComponent,
     FooderComponent,
     BackgroundComponent,
-    PanelComponent
+    PanelComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
