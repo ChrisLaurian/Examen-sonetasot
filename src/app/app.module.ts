@@ -8,6 +8,7 @@ import { FooderComponent } from './fooder/fooder.component';
 import { BackgroundComponent } from './background/background.component';
 import { PanelComponent } from './panel/panel.component';
 import { HomeComponent } from './home/home.component';
+import { GestionarCitaComponent } from './gestionar-cita/gestionar-cita.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     FooderComponent,
     BackgroundComponent,
     PanelComponent,
-    HomeComponent
+    HomeComponent,
+    GestionarCitaComponent
   ],
   imports: [
     BrowserModule,
