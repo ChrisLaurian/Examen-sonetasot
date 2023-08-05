@@ -10,9 +10,185 @@
     margin-top: -500px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    flex-direction: column;
     
     
   }
   
+  .title {
+    text-align: center;
+    font: normal normal 8px;
+    letter-spacing: 0px;
+    color: #015DB1;
+    padding-left: 170px;
+    padding-right: 170px;
+    font-weight: bold;
+  }
 
+  .box-selector{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+  }
+
+  .box{
+    height: 150px;
+    width: 270px;
+    box-shadow: 0px 3px 15px #00000027;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+  }
+
+  .icon{
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 35px;
+    align-self: flex-start;
+    
+  }
+
+  .dosis{
+    display: flex;
+    
+  }
+
+  .numeral p{
+    display: flex;
+    margin-right: 5px;
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: #37AEFE;
+    color:#FFFFFF !important;
+   padding: 2px;
+   justify-content: center;
+   align-items: center;
+
+  }
+
+  .dosis p{
+    color: #37AEFE;
+  }
+
+  .info{
+    color: #00326C;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .astra{
+    margin-top: 2px;
+    color: #FF6C00;
+    margin-left: 10px;
+  }
+
+  .astra p{
+    margin-top: -14px;
+    font-size: 15px;
+  }
+
+  .divisor{
+    margin-top: 1.5em;
+    align-self: center;
+    height: 1px;
+    width: 80%;
+    background-color: #00000027;
+  }
+
+  .curp{
+    align-self: flex-start;
+    margin-left: 4.5em;
+    margin-top: 1em;
+  }
  
+  .curp h2{
+    color: #37AEFE;
+    margin-bottom: .5em;
+  }
+
+  .curp p {
+    color: #676D72;
+    font-weight: bold;
+    
+  }
+
+  .curp a {
+    color: #57BBFF;
+  }
+
+  .curp a:hover{
+    transition: .5s;
+    color: #015DB1;
+  }
+
+  .curp-textbox{
+    margin-left: 4.5em;
+    margin-top: 1em;
+  }
+
+  .curp-textbox input{
+    margin-right: 2em;
+    width: 260px;
+    height: 30px;
+    box-shadow: 0px 0px 5px #8D8A7D98;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    border: 0.5px solid #EAEDEF;
+    background-image: url(../../assets/images/ico_user.svg);
+    color:#A6A6AF;
+    padding-left: 50px;
+    left: 10px;
+  }
+
+  .curp-textbox button{
+    width: 180px;
+    height: 30px;
+    color:#FFFFFF;
+    background-color: #015DB1;
+    border-radius: 5px;
+    box-shadow: 0px 3px 15px #00000027;
+    border-style: none;
+    transition: 1s;
+    
+  }
+
+  .curp-textbox button:hover{
+    transition: 1s;
+    background-color: #00326C;
+  }
+
+  .consulta{
+    margin-left: 4.5em;
+    margin-top: 1em;
+  }
+
+  .consulta p{
+    color: #676D72;
+  }
+
+  .consulta a{
+    color: #37AEFD;
+  }
+
+  .consulta a:hover{
+    transition: .5s;
+    color: #015DB1;
+  }
+
+  #icon-right{
+    transform: rotate(180deg);
+  }
+
+  .img-effect{
+    
+    transition: filter 0.3s;
+  }
+
+  .img-effect:hover{
+    
+    filter: hue-rotate(200deg);
+  }
