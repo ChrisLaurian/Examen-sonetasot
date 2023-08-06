@@ -9,6 +9,8 @@ import { BackgroundComponent } from './background/background.component';
 import { PanelComponent } from './panel/panel.component';
 import { HomeComponent } from './home/home.component';
 import { GestionarCitaComponent } from './gestionar-cita/gestionar-cita.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { GestionarCitaComponent } from './gestionar-cita/gestionar-cita.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
