@@ -1,95 +1,30 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+'use strict'
 
-var validator = require('validator');
-var Registro = require('../backend/models/registro');
+// Cargar modulos de node para crear servidor
+var express = require('express');
+var bodyParser = require('body-parser');
 
-//Ejecuta express (http)
+// Ejecutar express (http)
 var app = express();
 
-//carga ficheros rutas
+// Cargar ficheros rutas
+var article_routes = require('./routes/registro');
 
-//Middlewares
+// Middlewares 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-//CORS
-
-//Añadir prefijos a rutas
-app.post('/save', async (req, res) => {
-    // Recoger parametros
-    var params = req.body;
-  
-    // Validar datos
-    try {
-      var validate_curp_length = validator.isLength(params.curp, { min: 18, max: 18 });
-      var containsLettersAndNumbers = /^[A-Za-z]+$/;
-      var containsOnlyNumbers = /^[0-9]+$/;
-  
-      if (!validate_curp_length) {
-        return res.status(400).send({
-          message: 'La longitud de la CURP no es válida'
-        });
-      }
-  
-      if (containsLettersAndNumbers.test(params.curp) || containsOnlyNumbers.test(params.curp)) {
-        return res.status(400).send({
-          message: 'La CURP debe contener letras y números'
-        });
-      }
-  
-      // Crear objeto
-      var registro = new Registro();
-      // Asignar valores
-      registro.curp = params.curp;
-  
-      // Guardar el registro 
-      try {
-        const registroStored = await registro.save();
-        
-        return res.status(201).send({
-          status: 'success',
-          message: 'Curp Correcta, registro guardado exitosamente',
-          registro: registroStored
-        });
-      } catch (error) {
-        return res.status(500).send({
-          status: 'error',
-          message: 'El registro no fue guardado'
-          
-        });
-      }
-    } catch (error) {
-      return res.status(400).send({
-        message: 'Error en los datos de la CURP'
-      });
-    }
-  });
-
-app.get('/registros', async (req, res) => {
-    try {
-      const registros = await Registro.find({}).exec();
-  
-      return res.status(200).send({
-        status: 'success',
-        registros
-      });
-    } catch (error) {
-      return res.status(500).send({
-        status: 'error',
-        message: 'Error al obtener los registros'
-      });
-    }
-  });
-
-//Ruta de prueba
-app.get('/test', (req, res) =>{
-
-    return res.status(200).send({
-        Prueba: 'corriendo',
-        Autor: 'Christian Laurian'
-    });
+// CORS
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
 });
 
-//Exportar modulo 
+// Añadir prefijos a rutas / Cargar rutas
+app.use('/api', article_routes);
+
+// Exportar modulo (fichero actual)
 module.exports = app;

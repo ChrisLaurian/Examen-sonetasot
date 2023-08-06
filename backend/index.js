@@ -1,17 +1,18 @@
-const express = require('express');
-const mongoose = require('mongoose');
+'use strict'
 
-const app = require('./app');
+var mongoose = require('mongoose');
+var app = require('./app');
+var port = 3900;
 
-
+mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/api_rest_vacunas', { useNewUrlParser: true })
+        .then(() => {
+            console.log('Conexión a la base de datos correcta !!!');
 
-mongoose.connect('mongodb://localhost:27017/api_rest', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+            // Crear servidor y ponerme a escuchar peticiones HTTP
+            app.listen(port, () => {
+                console.log('Servidor corriendo en http://localhost:'+port);
+            });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Servidor escuchando en el puerto ${port}`);
-});
+        });

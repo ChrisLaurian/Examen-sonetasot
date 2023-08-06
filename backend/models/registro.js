@@ -1,3 +1,5 @@
+'use strict'
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -16,3 +18,4 @@ var RegistroSchema = Schema({
 });
 
 module.exports = mongoose.model('Registro', RegistroSchema);
+// registros --> guarda documentos de este tipo y con estructura dentro de la colección
