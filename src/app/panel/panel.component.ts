@@ -11,8 +11,15 @@ export class PanelComponent implements OnInit {
   curp: string = '';
   mensaje: string = ''; // Agrega una propiedad para mostrar mensajes
   registroGuardado: Registro | null = null;
+  curpValue: string = '';
+
+ 
 
   constructor(private registroService: RegistroService) {}
+
+  transformToUppercase() {
+    this.curpValue = this.curpValue.toUpperCase();
+  }
 
   ngOnInit(): void {}
 
@@ -37,6 +44,7 @@ export class PanelComponent implements OnInit {
         (error) => {
           console.error('Error al guardar registro', error);
           this.mensaje = 'Error al guardar el registro';
+          alert('La curp no es valida');
         }
       );
     } else {

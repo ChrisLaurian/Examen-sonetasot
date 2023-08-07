@@ -20,13 +20,13 @@
     <div class="divisor"></div>
     <div class="curp">
       <h2>Comenzar ahora</h2>
-      <p>Ingresa tu CURP para agendar una cita <br> o para <a href="">cancelar una cita</a> ya registrada.</p>
+      <p>Ingresa tu CURP para agendar una cita <br> o para <a href="" (click)="guardarRegistro()" >cancelar una cita</a> ya registrada.</p>
     </div>
     <div class="curp-textbox">
-      <input type="text" id="miTextbox" [(ngModel)] ="curp" name="miTextbox"  placeholder="Introduce tu CURP" >
+      <div id="icon_input"><img src="../../assets/images/ico_user.svg" alt=""><input type="text" id="miTextbox" [(ngModel)]="curpValue" [(ngModel)] ="curp"  name="miTextbox"  placeholder="Introduce tu CURP" ></div>
       <button (click)="guardarRegistro()"> Continuar </button>
     </div>
     <div class="consulta">
-      <p>Si no conoces tu CURP <a href="">consulta aquí</a></p>
+      <p>Si no conoces tu CURP <a href="https://www.gob.mx/curp/">consulta aquí</a></p>
     </div>
   </div>
