@@ -10,6 +10,21 @@ import { Registro } from '../Models/registro';
 export class GestionarCitaComponent implements OnInit {
   registroGuardado: Registro | null = null;
 
+  borrarRegistro(id: string): void{
+    if(confirm('¿Estas seguro que quieres cancelar tu cita?')){
+      this.registroService.deleteData(id).subscribe(
+        () => {
+          this.registroGuardado = null;
+          alert('Cita cancelada!')
+        },
+        (error) => {
+          console.error('Error al cancelar la cita', error);
+          alert('Error al cancelar tu cita');
+        }
+      )
+    }
+  }
+
   constructor(private registroService: RegistroService) { }
 
   ngOnInit(): void {

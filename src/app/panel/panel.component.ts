@@ -19,6 +19,7 @@ export class PanelComponent implements OnInit {
   guardarRegistro(): void {
     if (this.curp.trim() !== '') {
       const nuevoRegistro = new Registro(
+        123456,
         'Nombre Ejemplo',
         this.curp,
         'Módulo Ejemplo',

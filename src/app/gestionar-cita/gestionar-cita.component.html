@@ -8,7 +8,7 @@
     </div>
     </div>
         
-        <button><img src="../../assets/images/ico_cancel.svg" alt="">Quiero cancelar mi cita</button>
+        <button *ngIf="registroGuardado._id !== undefined" (click)="borrarRegistro(registroGuardado._id.toString())"><img src="../../assets/images/ico_cancel.svg" alt="">Quiero cancelar mi cita</button>
     </div>
 
     <div class="curp-info">
