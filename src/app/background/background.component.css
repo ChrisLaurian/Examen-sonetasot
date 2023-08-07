@@ -56,7 +56,7 @@
     align-content: baseline;
     color: aliceblue;
     top: 20px;
-    right:  11em;
+    margin-left: 78%;
 }
 
 .whatsapp:hover{
@@ -72,4 +72,9 @@
 .whatsapp p{
     align-self: center;
     margin-left: .2em;
+}
+
+.whatsapp p a{
+    text-decoration: none;
+    color: aliceblue;
 }
