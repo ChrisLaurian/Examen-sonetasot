@@ -1,14 +1,17 @@
-<div *ngIf="registroGuardado">
+<div *ngIf="registroGuardado"> 
 <div class="container">
     <div class="registro">
         <div class="title-check">
             <div class="check-container">
+                
             <div class="check"><img src="../../assets/images/verificación.png" alt=""></div>
         <h3>Registro concluido</h3>
+    
     </div>
     </div>
-        
-        <button *ngIf="registroGuardado._id !== undefined" (click)="borrarRegistro(registroGuardado._id.toString())"><img src="../../assets/images/ico_cancel.svg" alt="">Quiero cancelar mi cita</button>
+     
+        <button *ngIf="registroGuardado._id !== undefined" (click)="borrarRegistro(registroGuardado._id.toString())" routerLink="/"><img src="../../assets/images/ico_cancel.svg" alt="">Quiero cancelar mi cita</button>
+    
     </div>
 
     <div class="curp-info">
@@ -17,8 +20,10 @@
                 <p class="curp-container">CURP:</p>
             </div>
             <div class="curp-info-content">
+                
                 <p class="info-person">{{ registroGuardado.curp }}</p> <br>
                 <p class="info-person">{{ registroGuardado.nombre }}</p>
+            
             </div>
                 
         </div>
@@ -37,14 +42,19 @@
 
     <div class="cita-info">
         <div class="modulo">
+            
             <p>Módulo</p> <br><p class="info-person">{{ registroGuardado.modulo }}</p>
+            
         </div>
         <div class="direccion">
+            
             <p>Dirección </p><br><p class="info-person"> {{ registroGuardado.direccion }}</p>
+        
         </div>
         <div class="fecha">
             <p>Fecha y hora:</p>
-            <button>{{ registroGuardado.fecha }} {{ registroGuardado.hora }}</button>
+            <button>
+                {{ registroGuardado.fecha }} {{ registroGuardado.hora }}</button>
         </div>
     </div>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroService } from '../services/registro.service';
 import { Registro } from '../Models/registro'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestionar-cita',
@@ -16,6 +17,7 @@ export class GestionarCitaComponent implements OnInit {
         () => {
           this.registroGuardado = null;
           alert('Cita cancelada!')
+          this.router.navigate(['/']);
         },
         (error) => {
           console.error('Error al cancelar la cita', error);
@@ -25,7 +27,7 @@ export class GestionarCitaComponent implements OnInit {
     }
   }
 
-  constructor(private registroService: RegistroService) { }
+  constructor(private registroService: RegistroService, private router: Router) { }
 
   ngOnInit(): void {
     this.registroService.registroGuardado$.subscribe((registro: Registro) => {

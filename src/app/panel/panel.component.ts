@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroService } from '../services/registro.service';
 import { Registro } from '../Models/registro';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-panel',
@@ -12,10 +13,11 @@ export class PanelComponent implements OnInit {
   mensaje: string = ''; // Agrega una propiedad para mostrar mensajes
   registroGuardado: Registro | null = null;
   curpValue: string = '';
+  
 
  
 
-  constructor(private registroService: RegistroService) {}
+  constructor(private registroService: RegistroService, private router: Router) {}
 
   transformToUppercase() {
     this.curpValue = this.curpValue.toUpperCase();
@@ -45,6 +47,7 @@ export class PanelComponent implements OnInit {
           console.error('Error al guardar registro', error);
           this.mensaje = 'Error al guardar el registro';
           alert('La curp no es valida');
+          this.router.navigate(['/']);
         }
       );
     } else {

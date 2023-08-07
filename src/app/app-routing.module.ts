@@ -5,7 +5,7 @@ import { GestionarCitaComponent } from './gestionar-cita/gestionar-cita.componen
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'Gestionar-cita', component: GestionarCitaComponent},
+  {path: 'gestionar-cita', component: GestionarCitaComponent}
 ];
 
 @NgModule({
