@@ -1,26 +1,29 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable  } from "rxjs";
-import { Registro } from "../Models/registro";
-import { Global } from "./global";
+import { HttpClient } from '@angular/common/http';
+import { Injectable, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Registro } from '../Models/registro';
+import { tap } from 'rxjs/operators';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class RegistroService {
+  private _backendUrl = 'http://localhost:3900/api';
 
-@Injectable()
-export class RegistroService{
+  registroGuardado$ = new EventEmitter<Registro>();
 
-    public url: string;
+  constructor(private http: HttpClient) { } 
 
-    constructor(
-        private _http: HttpClient
-    ){
-        this.url = Global.url;
-    }
+  getData(): Observable<any> {
+    return this.http.get(`${this._backendUrl}/registros`); 
+  }
 
-    create(registro):Observable<any>{
-        let params = JSON.stringify(registro);
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.post(this.url+'save', params, {headers: headers});
-    }
-
+  saveData(registro: Registro): Observable<any> {
+    return this.http.post(`${this._backendUrl}/save`, registro).pipe(
+      tap((response: any) => {
+        const registroGuardado: Registro = response.registro;
+        this.registroGuardado$.emit(registroGuardado);
+      })
+    ); 
+  } 
 }

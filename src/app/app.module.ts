@@ -10,6 +10,7 @@ import { PanelComponent } from './panel/panel.component';
 import { HomeComponent } from './home/home.component';
 import { GestionarCitaComponent } from './gestionar-cita/gestionar-cita.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

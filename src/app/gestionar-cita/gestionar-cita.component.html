@@ -1,3 +1,4 @@
+<div *ngIf="registroGuardado">
 <div class="container">
     <div class="registro">
         <div class="title-check">
@@ -16,8 +17,8 @@
                 <p class="curp-container">CURP:</p>
             </div>
             <div class="curp-info-content">
-                <p class="info-person">Curp...</p> <br>
-                <p class="info-person">Nombre...</p>
+                <p class="info-person">{{ registroGuardado.curp }}</p> <br>
+                <p class="info-person">{{ registroGuardado.nombre }}</p>
             </div>
                 
         </div>
@@ -36,14 +37,14 @@
 
     <div class="cita-info">
         <div class="modulo">
-            <p>Módulo</p> <br><p class="info-person">Lugar...</p>
+            <p>Módulo</p> <br><p class="info-person">{{ registroGuardado.modulo }}</p>
         </div>
         <div class="direccion">
-            <p>Dirección </p><br><p class="info-person"> Lugar...</p>
+            <p>Dirección </p><br><p class="info-person"> {{ registroGuardado.direccion }}</p>
         </div>
         <div class="fecha">
             <p>Fecha y hora:</p>
-            <button>Fecha...</button>
+            <button>{{ registroGuardado.fecha }} {{ registroGuardado.hora }}</button>
         </div>
     </div>
 
@@ -54,4 +55,5 @@
         </p>
     </div>
 
+</div>
 </div>
